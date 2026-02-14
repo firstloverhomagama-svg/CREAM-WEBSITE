@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUNSUI - Premium Charcoal Face Wash</title>
+    <meta name="description" content="Experience the ultimate deep cleanse with Junsui Charcoal Face Wash. Remove impurities and reveal your true radiance.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a1a1a',
+                            charcoal: '#2d2d2d',
+                            accent: '#00C9A7', // Fresh Teal
+                            glow: '#4FD1C5',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00C9A7;
+        }
+        
+        .glass-effect {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #00C9A7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-white antialiased selection:bg-brand-accent selection:text-brand-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-bold tracking-tighter text-white">JUNSdUI<span class="text-brand-accent">.</span></a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">HOME</a>
+                    <a href="products.html" class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">PRODUCTS</a>
+                    <a href="about.html" class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">ABOUT</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">CONTACT</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <a href="#" class="relative text-gray-300 hover:text-white transition-colors group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-brand-accent text-brand-dark text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full group-hover:scale-110 transition-transform">0</span>
+                    </a>
+                    <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-brand-dark/95 backdrop-blur-lg absolute w-full border-b border-gray-800" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">HOME</a>
+                <a href="products.html" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">PRODUCTS</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">ABOUT</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-brand-dark z-0">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556228720-198755645163?q=80&w=2592&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/50"></div>
+            <!-- Animated Glows -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-accent/20 rounded-full blur-[128px] animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[128px] animate-pulse-slow delay-1000"></div>
+        </div>
+
+        <div class="container mx-auto px-4 z-10 relative grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center md:text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm">
+                    <span class="text-xs uppercase tracking-widest text-brand-accent font-semibold">New Formula v2.0</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Unleash Your <br>
+                    <span class="text-gradient">Pure Radiance</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-lg mx-auto md:mx-0 font-light">
+                    Experience the deep cleansing power of activated charcoal. Junsui removes impurities, controls oil, and leaves your skin feeling refreshed.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="products.html" class="px-8 py-4 bg-brand-accent text-brand-dark font-bold text-sm tracking-widest hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(0,201,167,0.3)]">
+                        SHOP NOW
+                    </a>
+                    <a href="#video" class="px-8 py-4 border border-gray-600 text-white font-bold text-sm tracking-widest hover:border-white transition-all duration-300">
+                        WATCH VIDEO
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Image Placeholder -->
+            <div class="relative group perspective-1000">
+                <div class="aspect-[3/4] relative w-full max-w-sm mx-auto animate-float">
+                    <!-- This would be the Junsui Bottle Image -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden border border-gray-700 ring-1 ring-white/10">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop" alt="Junsui Face Wash" class="object-cover w-full h-full mix-blend-overlay opacity-60">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                            <!-- Mock Label -->
+                            <div class="w-full h-full p-8 flex flex-col justify-between bg-black/40 backdrop-blur-[2px]">
+                                <div class="text-center mt-12">
+                                    <h2 class="text-4xl font-bold text-white tracking-widest drop-shadow-lg">JUNSUI</h2>
+                                    <p class="text-brand-accent text-sm tracking-[0.3em] font-medium mt-2">CHARCOAL</p>
+                                </div>
+                                <div class="text-center mb-12">
+                                    <p class="text-xs text-gray-300 uppercase tracking-widest border-t border-b border-gray-500 py-2 inline-block">Deep Cleanse</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Splash Effect (CSS Mock) -->
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-accent/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+            </div>
+        </div>
+        
+        <!-- Scroll helper -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Marquee / Trust Bar -->
+    <div class="bg-brand-charcoal py-6 border-y border-gray-800 overflow-hidden">
+        <div class="flex space-x-12 animate-marquee whitespace-nowrap justify-center opacity-50">
+            <span class="text-xl font-bold text-gray-400 tracking-widest">ACTIVATED CHARCOAL</span>
+            <span class="text-xl text-brand-accent">•</span>
+            <span class="text-xl font-bold text-gray-400 tracking-widest">OIL CONTROL</span>
+            <span class="text-xl text-brand-accent">•</span>
+            <span class="text-xl font-bold text-gray-400 tracking-widest">PORE CLEANSING</span>
+            <span class="text-xl text-brand-accent">•</span>
+            <span class="text-xl font-bold text-gray-400 tracking-widest">DERMATOLOGICALLY TESTED</span>
+            <span class="text-xl text-brand-accent">•</span>
+            <span class="text-xl font-bold text-gray-400 tracking-widest">VITAMIN E</span>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-brand-dark relative z-10" id="benefits">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <span class="text-brand-accent text-sm font-bold tracking-widest uppercase mb-4 block">Why Choose Junsui?</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Science of Purity</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="group p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-brand-accent/50 transition-all duration-300 hover:transform hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Deep Detox</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">
+                        Activated charcoal acts like a magnet to draw out dirt, debris, and impurities from deep within your pores.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-brand-accent/50 transition-all duration-300 hover:transform hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Instant Freshness</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">
+                        Feel the cooling sensation immediately. Removes stickiness and leaves skin feeling energetic and awake.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-brand-accent/50 transition-all duration-300 hover:transform hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Oil Control</h3>
+                    <p class="text-gray-400 leading-relaxed font-light">
+                        Absorbs 10x more oil than regular cleansers, preventing acne and keeping your face shine-free all day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Highlight -->
+    <section class="py-24 bg-gray-900 relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="aspect-square bg-brand-charcoal rounded-3xl overflow-hidden relative group">
+                         <img src="https://images.unsplash.com/photo-1571781926291-28055313394d?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Junsui Product">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent h-1/2 flex items-end p-8">
+                             <span class="text-white text-lg font-bold">100g Pack</span>
+                         </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 space-y-8">
+                    <h2 class="text-4xl font-bold text-white">The Ultimate Daily Routine</h2>
+                    <p class="text-gray-400 text-lg">
+                        Start your day with the confidence of clear skin. Our formula is designed for daily use, gentle enough for sensitive skin but tough on grime.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4 text-gray-300">
+                            <span class="w-6 h-6 rounded-full bg-brand-accent flex items-center justify-center text-brand-dark font-bold text-xs">✓</span>
+                            <span>Remove pollution particles</span>
+                        </li>
+                        <li class="flex items-center space-x-4 text-gray-300">
+                            <span class="w-6 h-6 rounded-full bg-brand-accent flex items-center justify-center text-brand-dark font-bold text-xs">✓</span>
+                            <span>Unclog pores instantly</span>
+                        </li>
+                        <li class="flex items-center space-x-4 text-gray-300">
+                            <span class="w-6 h-6 rounded-full bg-brand-accent flex items-center justify-center text-brand-dark font-bold text-xs">✓</span>
+                            <span>Refreshing menthol boost</span>
+                        </li>
+                    </ul>
+                    <div class="pt-6">
+                        <a href="products.html" class="inline-block px-10 py-4 bg-white text-brand-dark font-bold hover:bg-brand-accent transition-colors duration-300 shadow-lg">
+                            VIEW ALL PRODUCTS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-brand-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-white mb-16">What Our Customers Say</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-700">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-300 mb-6 italic">"Best face wash I've ever used. The charcoal really pulls out the dirt after a long day in traffic."</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-600"></div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Kasun Perera</p>
+                            <p class="text-gray-500 text-xs">Colombo</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-700">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-300 mb-6 italic">"Feels super fresh. The cooling effect is amazing for our weather. Highly recommended!"</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-600"></div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Amila Silva</p>
+                            <p class="text-gray-500 text-xs">Kandy</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-700">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-300 mb-6 italic">"Premium quality. My oily skin issues are finally under control. Thanks Junsui!"</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-600"></div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Dilshan Jayasuriya</p>
+                            <p class="text-gray-500 text-xs">Galle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold tracking-tighter">JUNSUI<span class="text-brand-accent">.</span></h3>
+                    <p class="text-gray-500 text-sm">Premium charcoal skincare solutions for the modern lifestyle.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-gray-300 uppercase tracking-wider text-xs">Shop</h4>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Face Wash</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Scrubs</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Sets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-gray-300 uppercase tracking-wider text-xs">Support</h4>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-gray-300 uppercase tracking-wider text-xs">Stay Updated</h4>
+                    <form class="flex flex-col space-y-4">
+                        <input type="email" placeholder="Enter your email" class="bg-gray-900 border border-gray-800 px-4 py-3 rounded text-sm focus:outline-none focus:border-brand-accent transition-colors">
+                        <button class="bg-brand-accent text-brand-dark font-bold py-3 rounded hover:bg-white transition-colors">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-900 text-center text-gray-600 text-xs">
+                <p>&copy; 2026 Junsui Sri Lanka. All rights reserved. Designed to Wow.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

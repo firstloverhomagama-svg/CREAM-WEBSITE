@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JUNSUI</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a1a1a',
+                            charcoal: '#2d2d2d',
+                            accent: '#00C9A7',
+                            glow: '#4FD1C5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-bold tracking-tighter text-white">JUNSUI<span
+                            class="text-brand-accent">.</span></a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">HOME</a>
+                    <a href="products.html"
+                        class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">PRODUCTS</a>
+                    <a href="about.html"
+                        class="text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">ABOUT</a>
+                    <a href="contact.html"
+                        class="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-sm font-medium tracking-wide">CONTACT</a>
+                </div>
+                <!-- Icons & Mobile Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="relative text-gray-300 hover:text-white transition-colors group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span
+                            class="absolute -top-2 -right-2 bg-brand-accent text-brand-dark text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full group-hover:scale-110 transition-transform">0</span>
+                    </a>
+                    <button class="md:hidden text-gray-300 hover:text-white transition-colors" id="mobile-menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-brand-dark/95 backdrop-blur-lg absolute w-full border-b border-gray-800"
+            id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">HOME</a>
+                <a href="products.html"
+                    class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">PRODUCTS</a>
+                <a href="about.html"
+                    class="block px-3 py-2 text-base font-medium text-white text-brand-accent">ABOUT</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 text-base font-medium text-white hover:text-brand-accent">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-40 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-charcoal to-brand-dark z-0"></div>
+        <div class="relative z-10 container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8">Not Just a Face Wash.<br><span class="text-brand-accent">A
+                    Revolution.</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">We are redefining men's grooming with the power of nature
+                and science.</p>
+        </div>
+    </header>
+
+    <!-- Story Section -->
+    <section class="py-24 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <!-- Image side -->
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1542601906990-24d4c1641943?q=80&w=2669&auto=format&fit=crop"
+                        alt="Men's Grooming"
+                        class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <!-- Content side -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <h2 class="text-3xl font-bold text-white">Our Origins</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Born from the need for a stronger, more effective cleanser for the modern man, Junsui combines
+                        traditional Japanese charcoal purification methods with cutting-edge dermatological science.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Our activated charcoal is sourced from sustainable bamboo forests, carbonized at over 1000°C to
+                        create micro-pores that are incredibly effective at trapping toxins and oils.
+                    </p>
+                    <div class="pt-6 grid grid-cols-2 gap-8">
+                        <div>
+                            <span class="block text-4xl font-bold text-brand-accent">1M+</span>
+                            <span class="text-sm text-gray-500 uppercase tracking-widest">Happy Faces</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-bold text-brand-accent">100%</span>
+                            <span class="text-sm text-gray-500 uppercase tracking-widest">Natural Charcoal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center text-gray-600 text-xs">
+            <p>&copy; 2026 Junsui Sri Lanka.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
